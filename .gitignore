@@ -1,6 +1,8 @@
 # Build and Object Folders
 bin/
 obj/
+packages/
+dump.rdb
 
 #User Specific Files
 *.user
