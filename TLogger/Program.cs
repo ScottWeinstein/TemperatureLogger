@@ -18,7 +18,10 @@ namespace TLogger
             if (args.Length >= 0)
             {
                 JsConfig.DateHandler = JsonDateHandler.ISO8601;
-                var redisClient = new RedisClient();
+
+                string host = args.Length == 0 ? "localhost" : args.First();
+
+                var redisClient = new RedisClient(host);
                 var temprc = redisClient.As<TemperatureItem>();
                 var rtempList = temprc.Lists["tempatureReadings"];
 
